@@ -1,0 +1,104 @@
+create
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,FieldReplaceableUnit=gh,RfPort=C
+administrativeState : UNLOCKED
+antennaSupervisionActive : false   
+automaticANUrecovery : true
+pimdAlarmActive : false
+pimdMeasDuration : LONG
+pimdThreshold : 300
+rfPortId : "C"
+userLabel : <empty>
+vswrSupervisionActive : true
+vswrSupervisionSensitivity : 70
+
+create
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,FieldReplaceableUnit=gh,RfPort=D
+administrativeState : UNLOCKED
+antennaSupervisionActive : false
+automaticANUrecovery : true
+pimdAlarmActive : false
+pimdMeasDuration : LONG
+pimdThreshold : 300
+rfPortId : "D"
+userLabel : <empty>
+vswrSupervisionActive : true
+vswrSupervisionSensitivity : 70
+
+create
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,AntennaUnit=bdf,AntennaSubunit=db,AuPort=3
+auPortId : "3"
+userLabel : <empty>
+
+create
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr
+,RfBranch=cb
+auPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,AntennaUnit=bdf,AntennaSubunit=db,AuPort=3"
+dlAttenuation : bc
+dlAttenuationPerFqRange : [-1, -1]
+dlTrafficDelay : tt
+dlTrafficDelayPerFqRange : [-1, -1]
+rfBranchId : "3"
+rfPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,FieldReplaceableUnit=gh,RfPort=C"
+tmaRef : <empty>
+ulAttenuation : bc
+ulAttenuationPerFqRange : [-1, -1]
+ulTrafficDelay : tt
+ulTrafficDelayPerFqRange : [-1, -1]
+userLabel : <empty> 
+
+create
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,AntennaUnit=bdf,AntennaSubunit=db,AuPort=4
+auPortId : "4"
+userLabel : <empty>
+
+create
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=b
+auPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,AntennaUnit=bdf,AntennaSubunit=db,AuPort=4"
+dlAttenuation : bc
+dlAttenuationPerFqRange : [-1, -1]
+dlTrafficDelay : tt
+dlTrafficDelayPerFqRange : [-1, -1]
+rfBranchId : "4"
+rfPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,FieldReplaceableUnit=gh,RfPort=D"
+tmaRef : <empty>
+ulAttenuation : bc
+ulAttenuationPerFqRange : [-1, -1]
+ulTrafficDelay : tt
+ulTrafficDelayPerFqRange : [-1, -1]
+userLabel : <empty>
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=vb
+rfPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,FieldReplaceableUnit=gh,RfPort=A"
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=cv
+rfPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,FieldReplaceableUnit=gh,RfPort=C" 
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=cb
+rfPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,FieldReplaceableUnit=gh,RfPort=B"
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=b
+rfPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,FieldReplaceableUnit=gh,RfPort=D"
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,ENodeBFunction=1,SectorCarrier=d
+noOfRxAntennas : "4"
+noOfTxAntennas : "4"
+configuredMaxTxPower : "160000"
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,NodeSupport=1,SectorEquipmentFunction=df
+rfBranchRef: ["SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=1", "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=2", "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=3", "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=4"]
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,ENodeBFunction=1,SectorCarrier=d
+rfBranchRxRef  : ["SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=1", "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=2", "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=3", "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=4"]
+rfBranchTxRef  : ["SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=1", "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=2", "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=3", "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,Equipment=1,AntennaUnitGroup=rhgr,RfBranch=4"]
+
+set
+FDN : "SubNetwork=ONRM_ROOT_MO,MeContext=123456,ManagedElement=123456,ENodeBFunction=1,EUtranCellFDD=gb"
+pZeroNominalPucch : -120
+pZeroNominalPusch : -84

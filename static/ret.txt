@@ -1,0 +1,104 @@
+create
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,FieldReplaceableUnit=FieldreplaceableUnit_value(RRU-7),RfPort=C
+administrativeState : UNLOCKED
+antennaSupervisionActive : false   
+automaticANUrecovery : true
+pimdAlarmActive : false
+pimdMeasDuration : LONG
+pimdThreshold : 300
+rfPortId : "C"
+userLabel : <empty>
+vswrSupervisionActive : true
+vswrSupervisionSensitivity : 70
+
+create
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,FieldReplaceableUnit=FieldreplaceableUnit_value(RRU-7),RfPort=D
+administrativeState : UNLOCKED
+antennaSupervisionActive : false
+automaticANUrecovery : true
+pimdAlarmActive : false
+pimdMeasDuration : LONG
+pimdThreshold : 300
+rfPortId : "D"
+userLabel : <empty>
+vswrSupervisionActive : true
+vswrSupervisionSensitivity : 70
+
+create
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,AntennaUnit=AntennaUnit_value,AntennaSubunit=AntennaSubunit_value,AuPort=3
+auPortId : "3"
+userLabel : <empty>
+
+create
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value
+,RfBranch=New-RfBranch_1
+auPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,AntennaUnit=AntennaUnit_value,AntennaSubunit=AntennaSubunit_value,AuPort=3"
+dlAttenuation : dlAttenuation_value
+dlAttenuationPerFqRange : [-1, -1]
+dlTrafficDelay : dlTrafficDelay_value
+dlTrafficDelayPerFqRange : [-1, -1]
+rfBranchId : "3"
+rfPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,FieldReplaceableUnit=FieldreplaceableUnit_value(RRU-7),RfPort=C"
+tmaRef : <empty>
+ulAttenuation : dlAttenuation_value
+ulAttenuationPerFqRange : [-1, -1]
+ulTrafficDelay : dlTrafficDelay_value
+ulTrafficDelayPerFqRange : [-1, -1]
+userLabel : <empty> 
+
+create
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,AntennaUnit=AntennaUnit_value,AntennaSubunit=AntennaSubunit_value,AuPort=4
+auPortId : "4"
+userLabel : <empty>
+
+create
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=New-RfBranch_2
+auPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,AntennaUnit=AntennaUnit_value,AntennaSubunit=AntennaSubunit_value,AuPort=4"
+dlAttenuation : dlAttenuation_value
+dlAttenuationPerFqRange : [-1, -1]
+dlTrafficDelay : dlTrafficDelay_value
+dlTrafficDelayPerFqRange : [-1, -1]
+rfBranchId : "4"
+rfPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,FieldReplaceableUnit=FieldreplaceableUnit_value(RRU-7),RfPort=D"
+tmaRef : <empty>
+ulAttenuation : dlAttenuation_value
+ulAttenuationPerFqRange : [-1, -1]
+ulTrafficDelay : dlTrafficDelay_value
+ulTrafficDelayPerFqRange : [-1, -1]
+userLabel : <empty>
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=Exist-RfBranch_1
+rfPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,FieldReplaceableUnit=FieldreplaceableUnit_value(RRU-7),RfPort=A"
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=Exist-RfBranch_2
+rfPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,FieldReplaceableUnit=FieldreplaceableUnit_value(RRU-7),RfPort=C" 
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=New-RfBranch_1
+rfPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,FieldReplaceableUnit=FieldreplaceableUnit_value(RRU-7),RfPort=B"
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=New-RfBranch_2
+rfPortRef : "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,FieldReplaceableUnit=FieldreplaceableUnit_value(RRU-7),RfPort=D"
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,ENodeBFunction=1,SectorCarrier=SectorCarrier_value
+noOfRxAntennas : "4"
+noOfTxAntennas : "4"
+configuredMaxTxPower : "160000"
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,NodeSupport=1,SectorEquipmentFunction=SectorEquipmentFunction_value
+rfBranchRef: ["SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=1", "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=2", "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=3", "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=4"]
+
+set
+FDN : SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,ENodeBFunction=1,SectorCarrier=SectorCarrier_value
+rfBranchRxRef  : ["SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=1", "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=2", "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=3", "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=4"]
+rfBranchTxRef  : ["SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=1", "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=2", "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=3", "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,Equipment=1,AntennaUnitGroup=AntennaUnitGroup_value,RfBranch=4"]
+
+set
+FDN : "SubNetwork=ONRM_ROOT_MO,MeContext=Site_id,ManagedElement=Site_id,ENodeBFunction=1,EUtranCellFDD=EUtranCellFDD_value"
+pZeroNominalPucch : -120
+pZeroNominalPusch : -84

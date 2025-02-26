@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Modify Script</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+    <!-- Bootstrap & Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7fc;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        .main-header-top {
+            background-color: white;
+            padding: 10px;
+        }
+        
+        .top-nav .btn {
+            color: white;
+            background: transparent;
+            border: none;
+        }
+        .card {
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-secondary {
+            border-radius: 8px;
+        }
+        .title-shadow {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: lightblue;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body class="sidebar-mini fixed">
+    {% load static %}
+    <div class="wrapper">
+        <!-- Navbar -->
+        <header class="main-header-top hidden-print">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <img src='{% static "images/int.png" %}' class="img ps-2" width="140" height="50" alt="integer logo">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                Pushpendra <i class="fas fa-user-circle"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Email</a></li>
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card p-4">
+                        <h4 class="text-center text-primary">Script Modify</h4>
+                        <span class="title-shadow"></span>
+
+                        {% if output_file_url %}
+                        <div class="alert alert-success text-center">
+                            Variables replaced successfully.
+                            <a href="{{ output_file_url }}" download class="btn btn-primary btn-sm">Download Output</a>
+                        </div>
+                        <div class="text-center">
+                            <a href="{% url 'replace_variables' %}" class="btn btn-secondary">Go Back</a>
+                        </div>
+                        {% else %}
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+
+                            <div class="row">
+                                {% for variable in variables_to_replace %}
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="mb-3">
+                                        <label for="{{ variable }}" class="form-label">{{ variable }}:</label>
+                                        <input type="text" name="{{ variable }}" class="form-control shadow-sm" required>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success">Generate Script</button>
+                            </div>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Define the specific fields that need transformation
+            let targetFields = ["dlAttenuation_value", "ulAttenuation_value", "dlTrafficDelay_value", "ulTrafficDelay_value"];
+    
+            // Select all input fields
+            let inputFields = document.querySelectorAll("input[name]");
+    
+            inputFields.forEach(input => {
+                input.addEventListener("blur", function () {
+                    let enteredValue = this.value.trim();
+    
+                    // Check if the input field's name is in the targetFields list
+                    if (targetFields.includes(this.name) && !isNaN(enteredValue) && enteredValue !== "") {
+                        let number = Number(enteredValue);
+                        this.value = "[" + Array(15).fill(number).join(", ") + "]";
+                    }
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
